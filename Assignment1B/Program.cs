@@ -8,12 +8,16 @@ namespace Assignment1B
 {
     internal class Program
     {
-        private const double MAX_CHARGE = 120.00;
-        private const double MEMBERSHIP_RATE = 0.75;
-        private const double REGULAR_RATE = 1.5;
-        private const double DISCOUNT_RATE = 1.25;
-        private const int DISCOUNT_HOURS = 7;
 
+        // Constants
+        private const double REGULAR_RATE = 1.5;
+        private const double MAX_CHARGE = 120.00;
+        private const int DISCOUNT_HOURS = 7;
+        private const double MEMBERSHIP_RATE = 0.75;
+        private const double DISCOUNT_RATE = 1.25;
+
+
+        // Method to display welcome message
         static void Welcome()
         {
 
@@ -26,6 +30,8 @@ namespace Assignment1B
 
         }
 
+
+        // Method to check if the user has a membership card
         static double GetRates(double hours, string answer)
         {
             double rate;
@@ -45,6 +51,8 @@ namespace Assignment1B
 
         }
 
+
+        // Method to check if the user input is valid
         static string CheckAnswer()
         {
 
@@ -68,8 +76,11 @@ namespace Assignment1B
 
 
 
+        // Main method
         static void Main(string[] args)
         {
+
+            // Loop to calculate parking charges
             while (true)
             {
                 Welcome();
@@ -90,11 +101,14 @@ namespace Assignment1B
 
                 double chargeableHours = Math.Ceiling(hours);
                 double charges = rate * chargeableHours;
+
+                // Check if the charges are more than the maximum charge
                 if (charges > MAX_CHARGE)
                 {
                     charges = MAX_CHARGE;
                 }
 
+                // Display the results
                 Console.WriteLine("Membership Card: " + (answer == "y" ? "Yes" : "No"));
                 Console.WriteLine("Hourly Rate: $" + rate);
                 Console.WriteLine("Number of Hours Charged: " + chargeableHours);
