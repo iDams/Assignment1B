@@ -8,13 +8,12 @@ namespace Assignment1B
 {
     internal class Program
     {
-
         // Constants
-        private const double REGULAR_RATE = 1.5;
-        private const double MAX_CHARGE = 120.00;
-        private const int DISCOUNT_HOURS = 7;
-        private const double MEMBERSHIP_RATE = 0.75;
-        private const double DISCOUNT_RATE = 1.25;
+        private const double HourlyRate = 1.5;
+        private const double MaxCharge = 120.00;
+        private const int DiscountHours = 7;
+        private const double MembershipRate = 0.75;
+        private const double DiscountedRate = 1.25;
 
 
         // Method to display welcome message
@@ -37,15 +36,15 @@ namespace Assignment1B
             double rate;
             if (answer.ToLower() == "y")
             {
-                rate = MEMBERSHIP_RATE;
+                rate = MembershipRate;
             }
-            else if (hours > DISCOUNT_HOURS)
+            else if (hours > DiscountHours)
             {
-                rate = DISCOUNT_RATE;
+                rate = DiscountedRate;
             }
             else
             {
-                rate = REGULAR_RATE;
+                rate = HourlyRate;
             }
             return rate;
 
@@ -103,9 +102,9 @@ namespace Assignment1B
                 double charges = rate * chargeableHours;
 
                 // Check if the charges are more than the maximum charge
-                if (charges > MAX_CHARGE)
+                if (charges > MaxCharge)
                 {
-                    charges = MAX_CHARGE;
+                    charges = MaxCharge;
                 }
 
                 // Display the results
